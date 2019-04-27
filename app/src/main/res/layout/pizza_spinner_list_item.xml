@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/pizzaStoreNameTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
@@ -38,6 +39,7 @@
                     android:textColor="#000000"
                     />
                 <TextView
+                    android:id="@+id/pizzaLocationTxt"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,6 +48,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/openTimeTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="영업시간 - 21:00 ~ 23:00"
