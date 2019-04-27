@@ -34,6 +34,25 @@ public class PizzaStoreAdapter extends ArrayAdapter<PizzaStore>{
         View row = convertView;
 
         if (row == null){
+            row = inf.inflate(R.layout.pizza_spinner_item, null);
+        }
+
+        PizzaStore storeData = mList.get(position);
+
+        ImageView logoImgView = row.findViewById(R.id.logoImgView);
+        TextView nameTxt = row.findViewById(R.id.nameTxt);
+
+
+        nameTxt.setText(storeData.storeName);
+        return row;
+    }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+
+        View row = convertView;
+
+        if (row == null){
             row = inf.inflate(R.layout.pizza_spinner_list_item, null);
         }
 
@@ -49,5 +68,6 @@ public class PizzaStoreAdapter extends ArrayAdapter<PizzaStore>{
         openTimeTxt.setText(String.format("영업시간 - %s",storeData.openTime));
 
         return row;
+
     }
 }
