@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.alldi.a20190427_practice.R;
 import com.alldi.a20190427_practice.datas.PizzaStore;
@@ -35,7 +37,16 @@ public class PizzaStoreAdapter extends ArrayAdapter<PizzaStore>{
             row = inf.inflate(R.layout.pizza_spinner_list_item, null);
         }
 
+        PizzaStore storeData = mList.get(position);
 
+        ImageView pizzaImageView = row.findViewById(R.id.pizzaImageView);
+        TextView pizzaStoreNameTxt = row.findViewById(R.id.pizzaStoreNameTxt);
+        TextView pizzaLocationTxt = row.findViewById(R.id.pizzaLocationTxt);
+        TextView openTimeTxt = row.findViewById(R.id.openTimeTxt);
+
+        pizzaStoreNameTxt.setText(storeData.storeName);
+        pizzaLocationTxt.setText(String.format("(%s)",storeData.location));
+        openTimeTxt.setText(String.format("영업시간 - %s",storeData.openTime));
 
         return row;
     }

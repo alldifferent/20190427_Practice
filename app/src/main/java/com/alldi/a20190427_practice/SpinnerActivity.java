@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.alldi.a20190427_practice.adapters.PizzaStoreAdapter;
 import com.alldi.a20190427_practice.databinding.ActivitySpinnerBinding;
 import com.alldi.a20190427_practice.datas.PizzaStore;
 
@@ -14,6 +15,7 @@ public class SpinnerActivity extends AppCompatActivity {
 
     List<PizzaStore> pizzaStores = new ArrayList<>();
     ActivitySpinnerBinding act;
+    PizzaStoreAdapter pizzaStoreAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,9 @@ public class SpinnerActivity extends AppCompatActivity {
     }
 
     void setValues(){
+
+        pizzaStoreAdapter = new PizzaStoreAdapter(SpinnerActivity.this, pizzaStores);
+        act.pizzaStoreSpinner.setAdapter(pizzaStoreAdapter);
 
     }
 
