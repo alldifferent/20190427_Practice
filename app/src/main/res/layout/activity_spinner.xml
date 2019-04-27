@@ -21,6 +21,12 @@
             android:layout_height="wrap_content"
 
             >
+            <Button
+                android:id="@+id/confirmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="선택 결과 확인"
+                />
 
 
         </Spinner>

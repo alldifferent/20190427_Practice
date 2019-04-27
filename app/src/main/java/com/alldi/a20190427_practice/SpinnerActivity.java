@@ -3,6 +3,9 @@ package com.alldi.a20190427_practice;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.alldi.a20190427_practice.adapters.PizzaStoreAdapter;
 import com.alldi.a20190427_practice.databinding.ActivitySpinnerBinding;
@@ -31,6 +34,26 @@ public class SpinnerActivity extends AppCompatActivity {
 
     void setupEvents(){
 
+        act.pizzaStoreSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(SpinnerActivity.this, String.format("%s 선택", pizzaStores.get(position).storeName), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        act.confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selectedPosition = act.pizzaStoreSpinner.getSelectedItemPosition();
+                String selectedPizzaStoreName = pizzaStores.get(selectedPosition).storeName;
+                Toast.makeText(SpinnerActivity.this, String.format("현재 선택된 가게이름: %s",selectedPizzaStoreName), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     void setValues(){
