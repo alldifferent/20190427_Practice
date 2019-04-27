@@ -11,31 +11,52 @@
         android:orientation="vertical"
 
         >
-        <FrameLayout
-            android:layout_width="100dp"
-            android:layout_height="100dp"
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             >
 
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
 
-            <ImageView
+                >
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:src="@mipmap/ic_launcher"
+
+                    />
+
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이름"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    />
+
+            </FrameLayout>
+
+            <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
+                android:spinnerMode="dialog"
+                android:entries="@array/live_location"
+                >
 
-                android:src="@mipmap/ic_launcher"
 
-                />
+            </Spinner>
 
-            <TextView
-                android:layout_marginTop="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이름"
-                android:textColor="#ffffff"
-                android:layout_gravity="center"
-                />
+        </LinearLayout>
 
-        </FrameLayout>
 
         <HorizontalScrollView
             android:layout_width="match_parent"
