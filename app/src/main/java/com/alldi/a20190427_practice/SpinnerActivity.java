@@ -1,8 +1,10 @@
 package com.alldi.a20190427_practice;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.alldi.a20190427_practice.databinding.ActivitySpinnerBinding;
 import com.alldi.a20190427_practice.datas.PizzaStore;
 
 import java.util.ArrayList;
@@ -11,15 +13,18 @@ import java.util.List;
 public class SpinnerActivity extends AppCompatActivity {
 
     List<PizzaStore> pizzaStores = new ArrayList<>();
+    ActivitySpinnerBinding act;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spinner);
+        act = DataBindingUtil.setContentView(this, R.layout.activity_spinner);
 
         setupEvents();
         setValues();
         fillPizzaStores();
+
+
     }
 
     void setupEvents(){
